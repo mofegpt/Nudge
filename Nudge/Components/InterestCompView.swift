@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct InterestCompView: View {
+    var text: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(text)
+            .padding(.horizontal,30)
+            .padding(.vertical,10)
+            .cornerRadius(30)
+            .overlay {
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(.primary, lineWidth: 1)
+            }
     }
 }
 
 #Preview {
-    InterestCompView()
+    InterestCompView(text: "farming")
 }

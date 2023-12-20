@@ -9,10 +9,16 @@ import SwiftUI
 
 struct ProfileButtonCompView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "person.fill")
+            .padding(13)
+            .background(.ultraThickMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 7))
     }
 }
 
 #Preview {
     ProfileButtonCompView()
+}
+#Preview {
+    MapKitView()
 }

@@ -7,18 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */; };
+		557429382A48FC330030BAC7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557429372A48FC330030BAC7 /* LocationService.swift */; };
 		5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */; };
 		5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589F5A82A45556E00E7BFC6 /* ContentView.swift */; };
 		5589F5AB2A45557000E7BFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AA2A45557000E7BFC6 /* Assets.xcassets */; };
 		5589F5AE2A45557000E7BFC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */; };
+		5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAA92B2F9539000DA32C /* NudgersListView.swift */; };
+		5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */; };
+		5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */; };
+		5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */; };
+		5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */; };
+		55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */; };
+		55AF7F092B32004200378295 /* InterestCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F082B32004200378295 /* InterestCompView.swift */; };
+		55AF7F0B2B32A23D00378295 /* ProfileButtonCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0A2B32A23D00378295 /* ProfileButtonCompView.swift */; };
+		55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0C2B32B09400378295 /* ProfileView.swift */; };
+		55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA87FF2B2D6F36008E362B /* MapKitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIKitViewModel.swift; sourceTree = "<group>"; };
+		557429372A48FC330030BAC7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5589F5A32A45556E00E7BFC6 /* Nudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeApp.swift; sourceTree = "<group>"; };
 		5589F5A82A45556E00E7BFC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5589F5AA2A45557000E7BFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5594CAA92B2F9539000DA32C /* NudgersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgersListView.swift; sourceTree = "<group>"; };
+		5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeBioCompListView.swift; sourceTree = "<group>"; };
+		5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NudgersStruct .swift"; sourceTree = "<group>"; };
+		5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationComp.swift; sourceTree = "<group>"; };
+		5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgerInfoView.swift; sourceTree = "<group>"; };
+		55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgerInfoViewModel.swift; sourceTree = "<group>"; };
+		55AF7F082B32004200378295 /* InterestCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCompView.swift; sourceTree = "<group>"; };
+		55AF7F0A2B32A23D00378295 /* ProfileButtonCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonCompView.swift; sourceTree = "<group>"; };
+		55AF7F0C2B32B09400378295 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		55DA87FF2B2D6F36008E362B /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +56,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5574292B2A48F9040030BAC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
+				5594CAA92B2F9539000DA32C /* NudgersListView.swift */,
+				5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */,
+				55AF7F0C2B32B09400378295 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5574292C2A48F90F0030BAC7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */,
+				55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5574292D2A48F9740030BAC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5574292E2A48F9890030BAC7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				557429372A48FC330030BAC7 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5589F59A2A45556E00E7BFC6 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +111,11 @@
 		5589F5A52A45556E00E7BFC6 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				5594CAAB2B2F962A000DA32C /* Components */,
+				5574292D2A48F9740030BAC7 /* Model */,
+				5574292E2A48F9890030BAC7 /* Services */,
+				5574292C2A48F90F0030BAC7 /* ViewModel */,
+				5574292B2A48F9040030BAC7 /* View */,
 				5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */,
 				5589F5A82A45556E00E7BFC6 /* ContentView.swift */,
 				5589F5AA2A45557000E7BFC6 /* Assets.xcassets */,
@@ -65,6 +130,17 @@
 				5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5594CAAB2B2F962A000DA32C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */,
+				5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */,
+				55AF7F082B32004200378295 /* InterestCompView.swift */,
+				55AF7F0A2B32A23D00378295 /* ProfileButtonCompView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +213,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */,
+				55AF7F092B32004200378295 /* InterestCompView.swift in Sources */,
+				5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */,
+				5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */,
 				5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */,
+				55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */,
+				55AF7F0B2B32A23D00378295 /* ProfileButtonCompView.swift in Sources */,
+				5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */,
+				55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */,
+				5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */,
 				5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */,
+				557429382A48FC330030BAC7 /* LocationService.swift in Sources */,
+				55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */,
+				557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +358,13 @@
 				DEVELOPMENT_TEAM = 8KG8PL9HFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +389,13 @@
 				DEVELOPMENT_TEAM = 8KG8PL9HFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

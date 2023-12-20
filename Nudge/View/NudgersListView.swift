@@ -12,7 +12,7 @@ struct NudgersListView: View {
         NavigationView {
             ScrollView {
                 ForEach(0..<8) { _ in
-                        NudgeBioCompView()
+                        NudgeBioCompListView()
                             .padding(.horizontal) 
                 }
                 
