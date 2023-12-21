@@ -46,15 +46,15 @@ struct MapKitView: View {
                     Spacer()
                     HStack {
                         Spacer()
-    //                    Button {
-    //                        mapData.getUserLocation()
-    //                    } label: {
-    //                        Text("Get")
-    //                            .padding(.horizontal, 20)
-    //                            .padding(.vertical,10)
-    //                            .background(.white)
-    //                            .cornerRadius(20)
-    //                    }
+                        Button {
+                            mapData.getUserLocation()
+                        } label: {
+                            Text("Get")
+                                .padding(.horizontal, 20)
+                                .padding(.vertical,10)
+                                .background(.white)
+                                .cornerRadius(20)
+                        }
                         
                         Button {
                             isNudgersSheetPresented.toggle()
