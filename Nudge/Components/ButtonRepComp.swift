@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileButtonCompView: View {
+struct ButtonRepComp: View {
     var body: some View {
         Image(systemName: "person.fill")
             .padding(13)
@@ -17,7 +17,7 @@ struct ProfileButtonCompView: View {
 }
 
 #Preview {
-    ProfileButtonCompView()
+    ButtonRepComp()
 }
 #Preview {
     MapKitView()
