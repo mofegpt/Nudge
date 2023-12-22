@@ -11,3 +11,13 @@ func handleNearbyUsers(w http.ResponseWriter, r *http.Request) {
 		serveJSON(w, m, http.StatusOK)
 	}
 }
+
+func handleDetailedNearbyUsers(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case http.MethodGet:
+		result := getDetailedNearbyUsers()
+		m := make(map[string][]DetailedUser)
+		m["nearby_detailed_list"] = result
+		serveJSON(w, m, http.StatusOK)
+	}
+}

@@ -21,6 +21,7 @@ func main() {
 		log.Printf("Default to port %s ", port)
 		http.HandleFunc("/test", handleTest)
 		http.HandleFunc("/nearbyUsers", handleNearbyUsers)
+		http.HandleFunc("/detailedNearbyUsers", handleDetailedNearbyUsers)
 	}
 
 	err := http.ListenAndServe(":"+port, nil)
