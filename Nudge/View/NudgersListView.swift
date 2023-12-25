@@ -8,23 +8,58 @@
 import SwiftUI
 
 struct NudgersListView: View {
+    @EnvironmentObject var mapData: MapUIKitViewModel
     var body: some View {
-        NavigationView {
-            ScrollView {
-                ForEach(0..<8) { _ in
-                        NudgeBioCompListView()
-                            .padding(.horizontal) 
+            NavigationView {
+                ScrollView {
+                    if let result = mapData.NearbyDetailedUsers{
+                        ForEach(result.nearbyNudgers, id: \.id) { result in
+                            NudgeBioCompListView(distance:result.Distance, firstName: result.FirstName,lastName:result.LastName, bio: result.Bio)
+                                    .padding(.horizontal)
+                        }
+                    }else{
+                        ProgressView()
+                    }
+                    
+                    
                 }
                 
+                .navigationTitle("Near by")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem {
+                        Button {
+                            mapData.getDetailedNearbyUsers()
+                        } label: {
+                            Text("Refresh")
+                                .font(.caption)
+                                .padding(.horizontal)
+                                .padding(.vertical,10)
+                                .background(.purple)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                
+                        }
+                        .tint(.white)
+
+                        
+                    }
+                }
             }
-            
-            .navigationTitle("Near by")
-            .navigationBarTitleDisplayMode(.inline)
+            .background(.ultraThickMaterial)
+            .onAppear{
+                mapData.getDetailedNearbyUsers() 
         }
         
     }
 }
 
+extension Double{
+    func formatNumber() -> String {
+            return String(format: "%.0f", self)
+        }
+}
+
 #Preview {
     NudgersListView()
+        .environmentObject(MapUIKitViewModel())
 }

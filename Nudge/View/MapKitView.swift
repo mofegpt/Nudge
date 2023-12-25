@@ -18,55 +18,57 @@ struct MapKitView: View {
             ZStack {
                 Map(position: $mapData.cameraPosition, bounds: MapCameraBounds(minimumDistance: 100, maximumDistance: 200), interactionModes: [.pitch, .rotate, .zoom], selection: $mapSelection){
                     UserAnnotation()
-                    ForEach(mapData.NudgersArray, id: \.id) { value in
-                        
-                        Annotation("", coordinate: CLLocationCoordinate2D(latitude: value.Lat, longitude: value.Lon)) {
-                            CustomAnnotationComp(image: value.smallImage)
+                    if let nearbyUsers = mapData.NearbyUsers{
+                        ForEach(nearbyUsers.nearbyNudgers, id: \.id) { value in
+                            Annotation("", coordinate: CLLocationCoordinate2D(latitude: value.Lat , longitude: value.Lon)) {
+                                CustomAnnotationComp()
+                            }
                         }
                     }
                 }
                 .mapStyle(.standard(elevation: .realistic))
                 .onAppear{
                     mapData.manager.checkIfLocationServiceIsEnabled()
+                    mapData.getNearbyUsers()
                 }
                 .mapControls {
                     MapUserLocationButton()
                 }
+                .tint(.purple)
                 VStack {
-                    HStack {
-                        Spacer()
-                        NavigationLink {
-                            ProfileView()
-                        } label: {
-                            ProfileButtonCompView()
-                                
-                        }.padding(.trailing,5)
-                            .padding(.top, 60)
-                    }
                     Spacer()
-                    HStack {
-                        Spacer()
-                        Button {
-                            mapData.getUserLocation()
-                        } label: {
-                            Text("Get")
-                                .padding(.horizontal, 20)
-                                .padding(.vertical,10)
-                                .background(.white)
-                                .cornerRadius(20)
+                    HStack(alignment: .bottom) {
+                        VStack {
+                            NavigationLink {
+                                ProfileView()
+                            } label: {
+                                ButtonRepComp(name: "person.fill")
+                                    
+                            }
+                            Button {
+                                //mapData.getUserLocation()
+                                mapData.getNearbyUsers()
+                            } label: {
+                                ButtonRepComp(name: "arrow.clockwise")
+                                   // .padding()
+                            }
                         }
+                        
+                        
+                        Spacer()
                         
                         Button {
                             isNudgersSheetPresented.toggle()
                         } label: {
                             Text("Nudgers")
+                                .foregroundStyle(.purple)
                                 .padding(.horizontal, 20)
                                 .padding(.vertical,10)
-                                .background(.white)
+                                .background(.ultraThickMaterial)
                                 .cornerRadius(20)
                         }
-                        .padding()
                     }
+                    .padding()
                 }
                 
             }

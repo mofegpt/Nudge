@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ButtonRepComp: View {
+    var name: String
     var body: some View {
-        Image(systemName: "person.fill")
+        Image(systemName: name)
+            .foregroundColor(.purple)
             .padding(13)
             .background(.ultraThickMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 7))
@@ -17,7 +19,7 @@ struct ButtonRepComp: View {
 }
 
 #Preview {
-    ButtonRepComp()
+    ButtonRepComp(name: "person.fill")
 }
 #Preview {
     MapKitView()

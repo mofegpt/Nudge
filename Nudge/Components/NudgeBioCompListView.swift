@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct NudgeBioCompListView: View {
+    var distance: Double
+    var firstName: String
+    var lastName: String
+    var bio: String
     var body: some View {
         
         NavigationLink {
@@ -16,12 +20,12 @@ struct NudgeBioCompListView: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading){
-                        Text("20m")
+                        Text(" \(distance.rounded().formatNumber())m")
                             .font(.caption)
-                        Text("Lorem Ipsum")
+                        Text("\(firstName) \(lastName)")
                             .font(.largeTitle)
                             .foregroundStyle(.primary)
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .")
+                        Text("\(bio)")
                         
                             .font(.caption)
                             .multilineTextAlignment(.leading)
@@ -45,7 +49,7 @@ struct NudgeBioCompListView: View {
 }
 
 #Preview {
-    NudgeBioCompListView()
+    NudgeBioCompListView(distance: 3.5,firstName:"RazzClart" ,lastName:"Bloodclart" , bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
 }
 #Preview {
     MapKitView()

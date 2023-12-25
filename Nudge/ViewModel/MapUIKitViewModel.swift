@@ -14,24 +14,30 @@ import Combine
 class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     var cancellable = Set<AnyCancellable>()
     let manager = LocationService.instance
+    let nearbyNudgers = NearbyListAPIService.instance
     
     
     @Published var userLocation: CLLocationCoordinate2D?
     
     @Published var cameraPosition: MapCameraPosition = .region(.userRegion)
     
-    @Published var NudgersArray: [NudgersStruct] = [NudgersStruct(NudgerID: 0, smallImage: UIImage(named: "simp")!, Lat:
-                                                                    37.332294073368736, Lon: -122.03120840331954),
-                                                    NudgersStruct(NudgerID: 1, smallImage: UIImage(named: "simp")!, Lat: 37.332289807949266, Lon: -122.03128349835336),
-                                                    NudgersStruct(NudgerID: 2, smallImage: UIImage(named: "simp")!, Lat: 37.33240070877668, Lon: -122.03111989447063),
-                                                    NudgersStruct(NudgerID: 3, smallImage: UIImage(named: "simp")!, Lat: 37.332311135044186, Lon: -122.03109575160634),]
+//    @Published var NudgersArray: [NudgersStruct] = [NudgersStruct(NudgerID: 0, smallImage: UIImage(named: "simp")!, Lat:
+//                                                                    37.332294073368736, Lon: -122.03120840331954),
+//                                                    NudgersStruct(NudgerID: 1, smallImage: UIImage(named: "simp")!, Lat: 37.332289807949266, Lon: -122.03128349835336),
+//                                                    NudgersStruct(NudgerID: 2, smallImage: UIImage(named: "simp")!, Lat: 37.33240070877668, Lon: -122.03111989447063),
+//                                                    NudgersStruct(NudgerID: 3, smallImage: UIImage(named: "simp")!, Lat: 37.332311135044186, Lon: -122.03109575160634),]
+    
+    @Published var NearbyUsers: NearbyList?
+    @Published var NearbyDetailedUsers: NearbyDetailedList?
     
     @Published var isNudgerSheetPresented = false
     @Published var isTapped = false
     
     override init(){
         super.init()
-       subscribeToRegion()
+        subscribeToRegion()
+        subscribeToNearbyUsers()
+        subscribeToNearbyDetailedUsers()
     }
     // size of 2
     var lonAndLat = [CLLocationDegrees?](repeating: nil, count: 2)
@@ -55,6 +61,32 @@ class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
                 self?.cameraPosition = .region(region)
             }
             .store(in: &cancellable)
+    }
+    
+    func subscribeToNearbyUsers(){
+        nearbyNudgers.$nearbyNudgers
+            .sink(receiveValue: { [weak self] results in
+                self?.NearbyUsers = results
+            })
+            .store(in: &cancellable)
+    }
+    func subscribeToNearbyDetailedUsers(){
+        nearbyNudgers.$nearbyDetailedList
+            .sink(receiveValue: { [weak self] results in
+                self?.NearbyDetailedUsers = results
+            })
+            .store(in: &cancellable)
+    }
+    
+    func getNearbyUsers(){
+        userLocation = manager.getUserLocation()
+        nearbyNudgers.getNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0)
+        
+    }
+    
+    func getDetailedNearbyUsers(){
+        userLocation = manager.getUserLocation()
+        nearbyNudgers.getDetailedNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0)
     }
     
 }

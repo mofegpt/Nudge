@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CustomAnnotationComp: View {
     @State private var isTapped = false
-    var image: UIImage
+    //var image: UIImage
     @EnvironmentObject var mapData: MapUIKitViewModel
     var body: some View {
         VStack {
-            Image(uiImage: image)
+            Image("simp")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 40, height: 40)
@@ -42,6 +42,6 @@ struct CustomAnnotationComp: View {
 }
 
 #Preview {
-    CustomAnnotationComp(image: UIImage(named: "simp")!)
+    CustomAnnotationComp()
         .environmentObject(MapUIKitViewModel())
 }
