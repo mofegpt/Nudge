@@ -64,6 +64,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
             print("not determined")
             locationManager.requestWhenInUseAuthorization()
             locationPermission = .allow
+        //locationManager.stop
         case .restricted:
             print("restricted")
             locationPermission = .notAllowed

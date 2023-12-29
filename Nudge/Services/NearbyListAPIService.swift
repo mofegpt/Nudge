@@ -18,6 +18,7 @@ class NearbyListAPIService{
     
     @Published var nearbyNudgers: NearbyList?
     @Published var nearbyDetailedList: NearbyDetailedList?
+    @Published var nudgerInfo: NudgerInfo?
     
     
     func getNearbyNudgers(lon: Double, lat: Double){
@@ -60,6 +61,28 @@ class NearbyListAPIService{
                 }
             } receiveValue: { [weak self] (returnedUsers) in
                 self?.nearbyDetailedList = returnedUsers
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getNudgerInfo(nudgerID: Int){
+        guard let url = URL(string: "http://localhost:8080/getUserInfo?id=\(nudgerID)") else { return }
+        var request = URLRequest(url: url)
+        URLSession.shared.dataTaskPublisher(for: request)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .tryMap(handleOutput)
+            .decode(type: NudgerInfo.self, decoder: JSONDecoder())
+            .sink { (completion) in
+                switch completion{
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("ERROR DOWNLOADING NUDGER INFO: \(error)")
+                    self.nudgerInfo = nil
+                }
+            } receiveValue: { [weak self] (returnedUsers) in
+                self?.nudgerInfo = returnedUsers
             }
             .store(in: &cancellables)
     }

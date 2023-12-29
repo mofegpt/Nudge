@@ -12,7 +12,6 @@ struct MapKitView: View {
     @StateObject var mapData =  MapUIKitViewModel()
     @State private var isNudgersSheetPresented = false
     @State private var mapSelection: MKMapItem?
-    @Namespace var mapScope
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,7 +20,7 @@ struct MapKitView: View {
                     if let nearbyUsers = mapData.NearbyUsers{
                         ForEach(nearbyUsers.nearbyNudgers, id: \.id) { value in
                             Annotation("", coordinate: CLLocationCoordinate2D(latitude: value.Lat , longitude: value.Lon)) {
-                                CustomAnnotationComp()
+                                CustomAnnotationComp(selectedNudger: value)
                             }
                         }
                     }
@@ -42,15 +41,13 @@ struct MapKitView: View {
                             NavigationLink {
                                 ProfileView()
                             } label: {
-                                ButtonRepComp(name: "person.fill")
-                                    
-                            }
+                                    ButtonRepComp(name: "person.fill")
+                                }
                             Button {
                                 //mapData.getUserLocation()
                                 mapData.getNearbyUsers()
                             } label: {
                                 ButtonRepComp(name: "arrow.clockwise")
-                                   // .padding()
                             }
                         }
                         
@@ -74,17 +71,19 @@ struct MapKitView: View {
             }
             .sheet(isPresented: $mapData.isNudgerSheetPresented, onDismiss: {
                 mapData.isNudgerSheetPresented = false
-                
             }, content: {
-                NudgerInfoView()
+                // Presents view to show more info about the selected annotation
+                NudgerInfoView(nudgerID: mapData.selectedNudger, distance: mapData.selectedNudgerDistance)
                     .presentationDetents([.medium,.large])
             })
             .sheet(isPresented: $isNudgersSheetPresented){
+                // Presents view that list more detailed info about nearby nudgers
                 NudgersListView()
                     .presentationDetents([.medium,.large])
             }
-        .environmentObject(mapData)
+            .environmentObject(mapData)
         }
+        .tint(Color.purple)
         
     }
 }

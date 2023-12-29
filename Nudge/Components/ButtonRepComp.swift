@@ -12,7 +12,7 @@ struct ButtonRepComp: View {
     var body: some View {
         Image(systemName: name)
             .foregroundColor(.purple)
-            .padding(13)
+            .padding(20)
             .background(.ultraThickMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 7))
     }

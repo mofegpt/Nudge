@@ -14,7 +14,7 @@ struct NudgersListView: View {
                 ScrollView {
                     if let result = mapData.NearbyDetailedUsers{
                         ForEach(result.nearbyNudgers, id: \.id) { result in
-                            NudgeBioCompListView(distance:result.Distance, firstName: result.FirstName,lastName:result.LastName, bio: result.Bio)
+                            NudgeBioCompListView(nudgerID: result.NudgerID, distance:result.Distance, firstName: result.FirstName,lastName:result.LastName, bio: result.Bio)
                                     .padding(.horizontal)
                         }
                     }else{
@@ -32,6 +32,7 @@ struct NudgersListView: View {
                             mapData.getDetailedNearbyUsers()
                         } label: {
                             Text("Refresh")
+                                .bold()
                                 .font(.caption)
                                 .padding(.horizontal)
                                 .padding(.vertical,10)

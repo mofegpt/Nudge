@@ -22,6 +22,7 @@ func main() {
 		http.HandleFunc("/test", handleTest)
 		http.HandleFunc("/nearbyUsers", handleNearbyUsers)
 		http.HandleFunc("/detailedNearbyUsers", handleDetailedNearbyUsers)
+		http.HandleFunc("/getUserInfo", handleNudgerInfo)
 	}
 
 	err := http.ListenAndServe(":"+port, nil)

@@ -11,6 +11,7 @@ struct CustomAnnotationComp: View {
     @State private var isTapped = false
     //var image: UIImage
     @EnvironmentObject var mapData: MapUIKitViewModel
+    var selectedNudger: NudgersStruct?
     var body: some View {
         VStack {
             Image("simp")
@@ -22,21 +23,16 @@ struct CustomAnnotationComp: View {
                     Circle()
                         .stroke(.black, lineWidth: 3)
                 )
-                //.scaleEffect(isTapped ? CGSize(width: 1.5, height: 1.5) : /*@START_MENU_TOKEN@*/CGSize(width: 1.0, height: 1.0)/*@END_MENU_TOKEN@*/ )
             
             Circle()
                 .frame(width: 5, height: 5)
-            //            Rectangle()
-            //                .frame(width: 40, height: 40)
-            //                .opacity(0)
         }
-        //.background(.red)
         .onTapGesture {
             withAnimation(.spring) {
-              //  isTapped.toggle()
-             //   mapData.isNudgerSheetPresented.toggle()
             }
             mapData.isNudgerSheetPresented.toggle()
+            mapData.selectedNudger = selectedNudger?.NudgerID ?? 0
+            mapData.selectedNudgerDistance = selectedNudger?.Distance ?? 0.0
         }
     }
 }

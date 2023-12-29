@@ -23,6 +23,18 @@
 		55AF7F092B32004200378295 /* InterestCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F082B32004200378295 /* InterestCompView.swift */; };
 		55AF7F0B2B32A23D00378295 /* ButtonRepComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0A2B32A23D00378295 /* ButtonRepComp.swift */; };
 		55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0C2B32B09400378295 /* ProfileView.swift */; };
+		55B6FFE62B3DF1B7006A14D6 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */; };
+		55B6FFE82B3DF8B7006A14D6 /* LargeButtonComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE72B3DF8B7006A14D6 /* LargeButtonComp.swift */; };
+		55B6FFEA2B3DFD26006A14D6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */; };
+		55B6FFEC2B3E00F6006A14D6 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */; };
+		55B6FFEE2B3E0147006A14D6 /* InputFormComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFED2B3E0147006A14D6 /* InputFormComp.swift */; };
+		55B6FFF02B3E06F3006A14D6 /* VerifyEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFEF2B3E06F3006A14D6 /* VerifyEmailView.swift */; };
+		55B6FFF22B3E0836006A14D6 /* VerificationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFF12B3E0836006A14D6 /* VerificationComp.swift */; };
+		55B6FFF42B3E09A1006A14D6 /* PopUpVerificationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFF32B3E09A1006A14D6 /* PopUpVerificationComp.swift */; };
+		55BE5E612B39E44200C6DFF0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E602B39E44200C6DFF0 /* ProfileViewModel.swift */; };
+		55BE5E632B39E82C00C6DFF0 /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */; };
+		55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E642B39F06100C6DFF0 /* PfTopComp.swift */; };
+		55BE5E672B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E662B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift */; };
 		55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA87FF2B2D6F36008E362B /* MapKitView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +56,18 @@
 		55AF7F082B32004200378295 /* InterestCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCompView.swift; sourceTree = "<group>"; };
 		55AF7F0A2B32A23D00378295 /* ButtonRepComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRepComp.swift; sourceTree = "<group>"; };
 		55AF7F0C2B32B09400378295 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		55B6FFE72B3DF8B7006A14D6 /* LargeButtonComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButtonComp.swift; sourceTree = "<group>"; };
+		55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		55B6FFED2B3E0147006A14D6 /* InputFormComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormComp.swift; sourceTree = "<group>"; };
+		55B6FFEF2B3E06F3006A14D6 /* VerifyEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailView.swift; sourceTree = "<group>"; };
+		55B6FFF12B3E0836006A14D6 /* VerificationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationComp.swift; sourceTree = "<group>"; };
+		55B6FFF32B3E09A1006A14D6 /* PopUpVerificationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVerificationComp.swift; sourceTree = "<group>"; };
+		55BE5E602B39E44200C6DFF0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
+		55BE5E642B39F06100C6DFF0 /* PfTopComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PfTopComp.swift; sourceTree = "<group>"; };
+		55BE5E662B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRequestedComp.swift; sourceTree = "<group>"; };
 		55DA87FF2B2D6F36008E362B /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +85,9 @@
 		5574292B2A48F9040030BAC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */,
+				55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */,
+				55B6FFEF2B3E06F3006A14D6 /* VerifyEmailView.swift */,
 				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
 				5594CAA92B2F9539000DA32C /* NudgersListView.swift */,
 				5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */,
@@ -74,6 +101,8 @@
 			children = (
 				5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */,
 				55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */,
+				55BE5E602B39E44200C6DFF0 /* ProfileViewModel.swift */,
+				55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -91,6 +120,7 @@
 			children = (
 				557429372A48FC330030BAC7 /* LocationService.swift */,
 				55942BDC2B352B5300F45CBD /* NearbyListAPIService.swift */,
+				55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +172,12 @@
 				5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */,
 				55AF7F082B32004200378295 /* InterestCompView.swift */,
 				55AF7F0A2B32A23D00378295 /* ButtonRepComp.swift */,
+				55BE5E642B39F06100C6DFF0 /* PfTopComp.swift */,
+				55BE5E662B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift */,
+				55B6FFE72B3DF8B7006A14D6 /* LargeButtonComp.swift */,
+				55B6FFED2B3E0147006A14D6 /* InputFormComp.swift */,
+				55B6FFF12B3E0836006A14D6 /* VerificationComp.swift */,
+				55B6FFF32B3E09A1006A14D6 /* PopUpVerificationComp.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -216,20 +252,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B6FFF02B3E06F3006A14D6 /* VerifyEmailView.swift in Sources */,
+				55BE5E632B39E82C00C6DFF0 /* CurrentUserService.swift in Sources */,
 				5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */,
+				55B6FFEA2B3DFD26006A14D6 /* LoginViewModel.swift in Sources */,
 				55942BDD2B352B5300F45CBD /* NearbyListAPIService.swift in Sources */,
 				55AF7F092B32004200378295 /* InterestCompView.swift in Sources */,
+				55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */,
 				5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */,
+				55B6FFF42B3E09A1006A14D6 /* PopUpVerificationComp.swift in Sources */,
 				5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */,
 				5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */,
+				55B6FFEC2B3E00F6006A14D6 /* CreateAccountView.swift in Sources */,
 				55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */,
 				55AF7F0B2B32A23D00378295 /* ButtonRepComp.swift in Sources */,
+				55B6FFE62B3DF1B7006A14D6 /* LogInView.swift in Sources */,
 				5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */,
 				55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */,
 				5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */,
 				5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */,
+				55BE5E672B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift in Sources */,
+				55B6FFEE2B3E0147006A14D6 /* InputFormComp.swift in Sources */,
+				55B6FFE82B3DF8B7006A14D6 /* LargeButtonComp.swift in Sources */,
 				557429382A48FC330030BAC7 /* LocationService.swift in Sources */,
 				55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */,
+				55B6FFF22B3E0836006A14D6 /* VerificationComp.swift in Sources */,
+				55BE5E612B39E44200C6DFF0 /* ProfileViewModel.swift in Sources */,
 				557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

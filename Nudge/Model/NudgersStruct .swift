@@ -15,6 +15,7 @@ struct NudgersStruct: Codable, Identifiable{
     let SmallImage: String
     let Lon: CLLocationDegrees
     let Lat: CLLocationDegrees
+    let Distance: Double
     
     
     enum CodingKeys: String, CodingKey {
@@ -23,6 +24,7 @@ struct NudgersStruct: Codable, Identifiable{
         case SmallImage = "small_image"
         case Lon = "longitude"
         case Lat = "latitude"
+        case Distance = "distance"
     }
 }
 
@@ -62,20 +64,37 @@ struct NearbyDetailedList: Codable{
 }
 
 
-struct NudgerInfoStruct:Identifiable{
-    public var id = UUID().uuidString
-    public var NudgerID: Int?
-    public var FirstName: String?
-    public var LastName: String?
-    public var age: Int?
-    public var Distance: String?
-    public var Bio: String?
-    public var Interests: [NudgerInterest]?
+struct NudgerInfo: Codable, Identifiable{
+    let id = UUID().uuidString
+    let NudgerID: Int
+    let FirstName: String
+    let LastName: String
+    let Bio: String
+    let Image: String
+    let Age: String
+    let Email: String
+    let Interests: [NudgerInterest]?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case NudgerID = "nudger_id"
+        case FirstName = "first_name"
+        case LastName = "last_name"
+        case Bio = "bio"
+        case Image = "image"
+        case Age = "age"
+        case Email = "email"
+        case Interests = "interests"
+    }
     
 }
 
-struct NudgerInterest: Identifiable{
-    public var id = UUID().uuidString
-    public var NudgerID: Int
-    public var interest: String
+struct NudgerInterest: Codable, Identifiable{
+    let id = UUID().uuidString
+    let NudgerID: Int
+    let interest: String
+    enum CodingKeys: String, CodingKey {
+        case NudgerID = "nudger_id"
+        case interest = "interest"
+    }
 }

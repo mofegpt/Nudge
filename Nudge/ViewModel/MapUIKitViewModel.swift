@@ -16,22 +16,20 @@ class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     let manager = LocationService.instance
     let nearbyNudgers = NearbyListAPIService.instance
     
-    
+    // LOCATION stuffs
     @Published var userLocation: CLLocationCoordinate2D?
-    
     @Published var cameraPosition: MapCameraPosition = .region(.userRegion)
     
-//    @Published var NudgersArray: [NudgersStruct] = [NudgersStruct(NudgerID: 0, smallImage: UIImage(named: "simp")!, Lat:
-//                                                                    37.332294073368736, Lon: -122.03120840331954),
-//                                                    NudgersStruct(NudgerID: 1, smallImage: UIImage(named: "simp")!, Lat: 37.332289807949266, Lon: -122.03128349835336),
-//                                                    NudgersStruct(NudgerID: 2, smallImage: UIImage(named: "simp")!, Lat: 37.33240070877668, Lon: -122.03111989447063),
-//                                                    NudgersStruct(NudgerID: 3, smallImage: UIImage(named: "simp")!, Lat: 37.332311135044186, Lon: -122.03109575160634),]
-    
+    // Holds the data of nearby users
     @Published var NearbyUsers: NearbyList?
     @Published var NearbyDetailedUsers: NearbyDetailedList?
     
     @Published var isNudgerSheetPresented = false
     @Published var isTapped = false
+    
+    // For annotation that are selected
+    @Published var selectedNudger: Int = 0
+    @Published var selectedNudgerDistance: Double = 0
     
     override init(){
         super.init()

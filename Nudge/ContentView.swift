@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("signed_in") var currentUserSignedIn: Bool  = false
     var body: some View {
-            MapKitView()
+        VStack {
+            if (!currentUserSignedIn){
+                LogInView()
+            }else{
+                MapKitView()
+            }
+        }
     }
 }
 

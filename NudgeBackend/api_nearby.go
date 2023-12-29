@@ -28,4 +28,14 @@ func handleDetailedNearbyUsers(w http.ResponseWriter, r *http.Request) {
 		m["nearby_detailed_list"] = result
 		serveJSON(w, m, http.StatusOK)
 	}
+
+}
+
+func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case http.MethodGet:
+		id, _ := strconv.Atoi(r.FormValue("id"))
+		result := getNudgerInfo(id)
+		serveJSON(w, result, http.StatusOK)
+	}
 }
