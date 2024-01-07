@@ -11,7 +11,7 @@ struct NudgerInfoView: View {
     @StateObject var vm =  NudgerInfoViewModel()
     @Environment(\.presentationMode) var presentationMode
 
-    var nudgerID: Int
+    var nudgerID: String
     var distance: Double
     var body: some View {
         
@@ -94,5 +94,5 @@ struct NudgerInfoView: View {
 }
 
 #Preview {
-    NudgerInfoView(nudgerID: 1, distance: 1.999)
+    NudgerInfoView(nudgerID: "1", distance: 1.999)
 }

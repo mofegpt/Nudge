@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		556C23E12B43464A0003CD24 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 556C23E02B43464A0003CD24 /* GoogleSignIn */; };
+		556C23E32B43464A0003CD24 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 556C23E22B43464A0003CD24 /* GoogleSignInSwift */; };
+		556C23E62B43D88D0003CD24 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */; };
+		556C23E82B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */; };
 		557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */; };
 		557429382A48FC330030BAC7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557429372A48FC330030BAC7 /* LocationService.swift */; };
 		5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */; };
 		5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589F5A82A45556E00E7BFC6 /* ContentView.swift */; };
 		5589F5AB2A45557000E7BFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AA2A45557000E7BFC6 /* Assets.xcassets */; };
 		5589F5AE2A45557000E7BFC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */; };
-		55942BDD2B352B5300F45CBD /* NearbyListAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942BDC2B352B5300F45CBD /* NearbyListAPIService.swift */; };
+		55942BDD2B352B5300F45CBD /* NudgersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */; };
 		5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAA92B2F9539000DA32C /* NudgersListView.swift */; };
 		5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */; };
 		5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */; };
@@ -39,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		556C23E42B43D7880003CD24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
+		556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist"; path = "../../../../Documents/client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIKitViewModel.swift; sourceTree = "<group>"; };
 		557429372A48FC330030BAC7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5589F5A32A45556E00E7BFC6 /* Nudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +53,7 @@
 		5589F5A82A45556E00E7BFC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5589F5AA2A45557000E7BFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		55942BDC2B352B5300F45CBD /* NearbyListAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyListAPIService.swift; sourceTree = "<group>"; };
+		55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgersAPIService.swift; sourceTree = "<group>"; };
 		5594CAA92B2F9539000DA32C /* NudgersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgersListView.swift; sourceTree = "<group>"; };
 		5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeBioCompListView.swift; sourceTree = "<group>"; };
 		5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NudgersStruct .swift"; sourceTree = "<group>"; };
@@ -76,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556C23E12B43464A0003CD24 /* GoogleSignIn in Frameworks */,
+				556C23E32B43464A0003CD24 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +96,9 @@
 			children = (
 				55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */,
 				55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */,
+				5594CAA92B2F9539000DA32C /* NudgersListView.swift */,
 				55B6FFEF2B3E06F3006A14D6 /* VerifyEmailView.swift */,
 				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
-				5594CAA92B2F9539000DA32C /* NudgersListView.swift */,
 				5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */,
 				55AF7F0C2B32B09400378295 /* ProfileView.swift */,
 			);
@@ -119,8 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				557429372A48FC330030BAC7 /* LocationService.swift */,
-				55942BDC2B352B5300F45CBD /* NearbyListAPIService.swift */,
+				55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */,
 				55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */,
+				556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -144,6 +154,8 @@
 		5589F5A52A45556E00E7BFC6 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */,
+				556C23E42B43D7880003CD24 /* Info.plist */,
 				5594CAAB2B2F962A000DA32C /* Components */,
 				5574292D2A48F9740030BAC7 /* Model */,
 				5574292E2A48F9890030BAC7 /* Services */,
@@ -198,6 +210,10 @@
 			dependencies = (
 			);
 			name = Nudge;
+			packageProductDependencies = (
+				556C23E02B43464A0003CD24 /* GoogleSignIn */,
+				556C23E22B43464A0003CD24 /* GoogleSignInSwift */,
+			);
 			productName = Nudge;
 			productReference = 5589F5A32A45556E00E7BFC6 /* Nudge.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 5589F59A2A45556E00E7BFC6;
+			packageReferences = (
+				556C23DF2B43464A0003CD24 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 5589F5A42A45556E00E7BFC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +261,7 @@
 			files = (
 				5589F5AE2A45557000E7BFC6 /* Preview Assets.xcassets in Resources */,
 				5589F5AB2A45557000E7BFC6 /* Assets.xcassets in Resources */,
+				556C23E82B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +276,7 @@
 				55BE5E632B39E82C00C6DFF0 /* CurrentUserService.swift in Sources */,
 				5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */,
 				55B6FFEA2B3DFD26006A14D6 /* LoginViewModel.swift in Sources */,
-				55942BDD2B352B5300F45CBD /* NearbyListAPIService.swift in Sources */,
+				55942BDD2B352B5300F45CBD /* NudgersAPIService.swift in Sources */,
 				55AF7F092B32004200378295 /* InterestCompView.swift in Sources */,
 				55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */,
 				5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */,
@@ -270,6 +290,7 @@
 				5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */,
 				55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */,
 				5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */,
+				556C23E62B43D88D0003CD24 /* GoogleAuthService.swift in Sources */,
 				5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */,
 				55BE5E672B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift in Sources */,
 				55B6FFEE2B3E0147006A14D6 /* InputFormComp.swift in Sources */,
@@ -410,6 +431,7 @@
 				DEVELOPMENT_TEAM = 8KG8PL9HFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nudge/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -441,6 +463,7 @@
 				DEVELOPMENT_TEAM = 8KG8PL9HFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nudge/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,6 +506,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		556C23DF2B43464A0003CD24 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		556C23E02B43464A0003CD24 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 556C23DF2B43464A0003CD24 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		556C23E22B43464A0003CD24 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 556C23DF2B43464A0003CD24 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5589F59B2A45556E00E7BFC6 /* Project object */;
 }

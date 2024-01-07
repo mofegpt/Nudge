@@ -14,7 +14,7 @@ import Combine
 class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     var cancellable = Set<AnyCancellable>()
     let manager = LocationService.instance
-    let nearbyNudgers = NearbyListAPIService.instance
+    let nearbyNudgers = NudgersAPIService.instance
     
     // LOCATION stuffs
     @Published var userLocation: CLLocationCoordinate2D?
@@ -28,7 +28,7 @@ class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     @Published var isTapped = false
     
     // For annotation that are selected
-    @Published var selectedNudger: Int = 0
+    @Published var selectedNudger: String = "0"
     @Published var selectedNudgerDistance: Double = 0
     
     override init(){
@@ -49,7 +49,6 @@ class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     func updateRegion(){
         withAnimation(.default) {
             manager.updateMapRegion()
-            //cameraPosition = .region(manager.region)
         }
     }
     
@@ -78,13 +77,27 @@ class MapUIKitViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     
     func getNearbyUsers(){
         userLocation = manager.getUserLocation()
-        nearbyNudgers.getNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0)
+        nearbyNudgers.getNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print("ERROR DOWNLOADING NEARBY NUDGERS: \(failure.localizedDescription)")
+            }
+        }
         
     }
     
     func getDetailedNearbyUsers(){
         userLocation = manager.getUserLocation()
-        nearbyNudgers.getDetailedNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0)
+        nearbyNudgers.getDetailedNearbyNudgers(lon: userLocation?.longitude ?? 0, lat: userLocation?.latitude ?? 0) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print("ERROR DOWNLOADING DETAILED NEARBY NUDGERS: \(failure.localizedDescription)")
+            }
+        }
     }
     
 }

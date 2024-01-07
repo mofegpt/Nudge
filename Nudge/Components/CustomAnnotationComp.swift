@@ -31,7 +31,7 @@ struct CustomAnnotationComp: View {
             withAnimation(.spring) {
             }
             mapData.isNudgerSheetPresented.toggle()
-            mapData.selectedNudger = selectedNudger?.NudgerID ?? 0
+            mapData.selectedNudger = selectedNudger?.NudgerID ?? "0"
             mapData.selectedNudgerDistance = selectedNudger?.Distance ?? 0.0
         }
     }

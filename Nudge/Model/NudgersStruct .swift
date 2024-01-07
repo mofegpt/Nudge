@@ -11,7 +11,7 @@ import SwiftUI
 
 struct NudgersStruct: Codable, Identifiable{
     let id = UUID().uuidString
-    let NudgerID: Int
+    let NudgerID: String
     let SmallImage: String
     let Lon: CLLocationDegrees
     let Lat: CLLocationDegrees
@@ -30,7 +30,7 @@ struct NudgersStruct: Codable, Identifiable{
 
 struct NudgersDetailedStruct: Codable, Identifiable{
     let id = UUID().uuidString
-    let NudgerID: Int
+    let NudgerID: String
     let FirstName: String
     let LastName: String
     let Bio: String
@@ -64,19 +64,18 @@ struct NearbyDetailedList: Codable{
 }
 
 
-struct NudgerInfo: Codable, Identifiable{
-    let id = UUID().uuidString
-    let NudgerID: Int
+struct NudgerInfo: Codable{
+   // let id = UUID().uuidString
+    let NudgerID: String
     let FirstName: String
     let LastName: String
     let Bio: String
     let Image: String
     let Age: String
     let Email: String
-    let Interests: [NudgerInterest]?
+//    let Interests: [NudgerInterest]?
     
     enum CodingKeys: String, CodingKey {
-        case id
         case NudgerID = "nudger_id"
         case FirstName = "first_name"
         case LastName = "last_name"
@@ -84,14 +83,14 @@ struct NudgerInfo: Codable, Identifiable{
         case Image = "image"
         case Age = "age"
         case Email = "email"
-        case Interests = "interests"
+//        case Interests = "interests"
     }
     
 }
 
 struct NudgerInterest: Codable, Identifiable{
     let id = UUID().uuidString
-    let NudgerID: Int
+    let NudgerID: String
     let interest: String
     enum CodingKeys: String, CodingKey {
         case NudgerID = "nudger_id"

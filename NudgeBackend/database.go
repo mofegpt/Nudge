@@ -12,7 +12,7 @@ import (
 
 type MySQlDatabase struct {
 	db               *sql.DB
-	stmtInsertTrip   *sql.Stmt
+	stmtInsertUser   *sql.Stmt
 	stmtUpdateConfig *sql.Stmt
 }
 
@@ -27,6 +27,15 @@ func (me *MySQlDatabase) init(filepath string) {
 		panic("db nil")
 	}
 	me.db = db
+
+	me.stmtInsertUser, err = db.Prepare(`
+	INSERT INTO user_profile (nudger_id, first_name, last_name, born, bio, image, email)
+	VALUES (?, ?, ?, ?, ?, ?, ?);
+	`)
+
+	if err != nil {
+		panic(err)
+	}
 
 	err = db.Ping()
 	if err != nil {

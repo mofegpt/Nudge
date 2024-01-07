@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PfTopComp: View {
+    var firstName: String
+    var lastName: String
+    var age: String
     var body: some View {
         VStack(){
             ZStack {
@@ -26,19 +29,23 @@ struct PfTopComp: View {
                     
             }
             .overlay(alignment: .bottom) {
-                Text("Edit Profile")
-                    .bold()
-                    .foregroundStyle(.white)
-                    .padding(.vertical,10)
-                    .padding(.horizontal,50)
-                    .background(.thinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                NavigationLink {
+                    
+                } label: {
+                    Text("Edit Profile")
+                        .bold()
+                        .foregroundStyle(Color("bw"))
+                        .padding(.vertical,10)
+                        .padding(.horizontal,50)
+                        .background(.purple)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                }
         }
             
             HStack(){
-                Text("De-Marcus,")
+                Text("\(firstName), \(lastName)")
                     .font(.title)
-                Text("26")
+                Text("\(age)")
             }
         }
 
@@ -46,5 +53,5 @@ struct PfTopComp: View {
 }
 
 #Preview {
-    PfTopComp()
+    PfTopComp(firstName: "Matthew", lastName: "faith", age: "26")
 }

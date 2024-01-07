@@ -13,7 +13,7 @@ struct ProfileView: View {
         
         ScrollView(showsIndicators: false){
             VStack() {
-                PfTopComp()
+                PfTopComp(firstName: vm.userData.firstName, lastName: vm.userData.lastName, age: vm.userData.born)
                     //.padding(.top, 50)
                 Divider()
                 
@@ -31,12 +31,15 @@ struct ProfileView: View {
                 }
             }
             .padding()
+            .onAppear{
+                vm.getAppData()
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement: .topBarTrailing) {
                 Button{
-                    vm.currentUserSignedIn = false
+                    vm.signOut()
                     
                 }label: {
                     Text("Sign out")

@@ -10,18 +10,19 @@ import SwiftUI
 import Combine
 
 
-class NearbyListAPIService{
+class NudgersAPIService{
     
-    static let instance = NearbyListAPIService()
+    static let instance = NudgersAPIService()
     
     var cancellables = Set<AnyCancellable>()
     
     @Published var nearbyNudgers: NearbyList?
     @Published var nearbyDetailedList: NearbyDetailedList?
     @Published var nudgerInfo: NudgerInfo?
+    @Published var currentUser: NudgerInfo?
     
     
-    func getNearbyNudgers(lon: Double, lat: Double){
+    func getNearbyNudgers(lon: Double, lat: Double, handler: @escaping (Result<String, Error>) -> ()){
         guard let url = URL(string: "http://localhost:8080/nearbyUsers?longitude=\(lon)&latitude=\(lat)") else { return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTaskPublisher(for: request)
@@ -32,9 +33,10 @@ class NearbyListAPIService{
             .sink { (completion) in
                 switch completion{
                 case .finished:
+                    handler(.success("COMPLETED SUCCESSFULLY"))
                     break
                 case .failure(let error):
-                    print("ERROR DOWNLOADING NEARBY NUDGERS: \(error)")
+                    handler(.failure(error))
                     self.nearbyNudgers = nil
                 }
             } receiveValue: { [weak self] (returnedUsers) in
@@ -43,9 +45,9 @@ class NearbyListAPIService{
             .store(in: &cancellables)
     }
     
-    func getDetailedNearbyNudgers(lon: Double, lat: Double){
+    func getDetailedNearbyNudgers(lon: Double, lat: Double, handler: @escaping (Result<String, Error>) -> ()){
         guard let url = URL(string: "http://localhost:8080/detailedNearbyUsers?longitude=\(lon)&latitude=\(lat)") else { return }
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         URLSession.shared.dataTaskPublisher(for: request)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
@@ -54,9 +56,10 @@ class NearbyListAPIService{
             .sink { (completion) in
                 switch completion{
                 case .finished:
+                    handler(.success("COMPLETED SUCCESSFULLY"))
                     break
                 case .failure(let error):
-                    print("ERROR DOWNLOADING DETAILED NEARBY NUDGERS: \(error)")
+                    handler(.failure(error))
                     self.nearbyDetailedList = nil
                 }
             } receiveValue: { [weak self] (returnedUsers) in
@@ -65,9 +68,9 @@ class NearbyListAPIService{
             .store(in: &cancellables)
     }
     
-    func getNudgerInfo(nudgerID: Int){
-        guard let url = URL(string: "http://localhost:8080/getUserInfo?id=\(nudgerID)") else { return }
-        var request = URLRequest(url: url)
+    func getNudgerInfo(nudgerID: String, handler: @escaping (Result<String, Error>) -> ()){
+        guard let url = URL(string: "http://localhost:8080/userInfo?id=\(nudgerID)") else { return }
+        let request = URLRequest(url: url)
         URLSession.shared.dataTaskPublisher(for: request)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
@@ -76,9 +79,10 @@ class NearbyListAPIService{
             .sink { (completion) in
                 switch completion{
                 case .finished:
+                    handler(.success("COMPLETED SUCCESSFULLY"))
                     break
                 case .failure(let error):
-                    print("ERROR DOWNLOADING NUDGER INFO: \(error)")
+                    handler(.failure(error))
                     self.nudgerInfo = nil
                 }
             } receiveValue: { [weak self] (returnedUsers) in
@@ -87,6 +91,62 @@ class NearbyListAPIService{
             .store(in: &cancellables)
     }
     
+    enum NetworkError: Error {
+        case badURL
+        case requestFailed
+    }
+    struct Response: Codable{
+        let message: String
+    }
+    
+    func createUser(nudgerID: String, firstName: String, lastName: String, bio: String, image: String, born: String, email: String, completion: @escaping (Result<String, NetworkError>) -> ()) {
+        guard let url = URL(string: "http://localhost:8080/userInfo") else {
+            completion(.failure(.badURL))
+            return
+        }
+        print("lol")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: NudgerInfo = NudgerInfo(NudgerID: nudgerID, FirstName: firstName, LastName: lastName, Bio: bio, Image: image, Age: born, Email: email)
+        
+        do{
+            request.httpBody = try JSONEncoder().encode(body)
+        }
+        catch let error {
+            completion(.failure(.badURL))
+            print("ERROR WITH HTTPBODY \(error)")
+            return
+        }
+        
+        // make the request
+        let task = URLSession.shared.dataTask(with: request) { data , _, error in
+            guard let data, error == nil else{
+                DispatchQueue.main.async {
+                    completion(.failure(.requestFailed))
+                    print("Error: \(error.debugDescription)")
+                }
+                return
+            }
+            do{
+                let response = try JSONDecoder().decode(Response.self, from: data)
+                DispatchQueue.main.async {
+                    //self.currentUser = response
+                    completion(.success(response.message))
+                    print("Success: \(response)")
+                }
+            }
+            catch let error {
+                DispatchQueue.main.async {
+                    completion(.failure(.requestFailed))
+                    print("Error: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
     
     private func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data{
         guard let response = output.response as? HTTPURLResponse,
@@ -98,5 +158,5 @@ class NearbyListAPIService{
         
         return output.data
     }
-
+    
 }

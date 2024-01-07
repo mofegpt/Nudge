@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -14,17 +15,19 @@ func main() {
 	mdb = &MySQlDatabase{}
 
 	// TODO: NOT SECURE!!
-	mdb.init("root:manifest+123@tcp(localhost:3306)/NudgeDB")
+	fmt.Printf("\n\nThis is the key %s\n\n", os.Getenv("DBKEY"))
+
+	mdb.init(os.Getenv("DBKEY"))
+	http.HandleFunc("/test", handleTest)
+	http.HandleFunc("/nearbyUsers", handleNearbyUsers)
+	http.HandleFunc("/detailedNearbyUsers", handleDetailedNearbyUsers)
+	http.HandleFunc("/userInfo", handleNudgerInfo)
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
-		log.Printf("Default to port %s ", port)
-		http.HandleFunc("/test", handleTest)
-		http.HandleFunc("/nearbyUsers", handleNearbyUsers)
-		http.HandleFunc("/detailedNearbyUsers", handleDetailedNearbyUsers)
-		http.HandleFunc("/getUserInfo", handleNudgerInfo)
+		log.Printf("Default to port x%s ", port)
 	}
-
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		log.Fatal(err)

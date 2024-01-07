@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type UserLocation struct {
-	NudgerID   int     `json:"nudger_id"`
+	NudgerID   string  `json:"nudger_id"`
 	SmallImage string  `json:"small_image"`
 	Longitude  float64 `json:"longitude"`
 	Latitude   float64 `json:"latitude"`
@@ -11,7 +13,7 @@ type UserLocation struct {
 }
 
 type DetailedUser struct {
-	NudgerID    int     `json:"nudger_id"`
+	NudgerID    string  `json:"nudger_id"`
 	FirstName   string  `json:"first_name"`
 	LastName    string  `json:"last_name"`
 	Bio         string  `json:"bio"`
@@ -20,7 +22,7 @@ type DetailedUser struct {
 }
 
 type NudgerInfo struct {
-	NudgerID  int    `json:"nudger_id"`
+	NudgerID  string `json:"nudger_id"`
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
 	Bio       string `json:"bio"`
@@ -90,12 +92,14 @@ func getDetailedNearbyUsers(lon float64, lat float64) (result []DetailedUser) {
 	return result
 }
 
-func getNudgerInfo(id int) (result NudgerInfo) {
+// SELECT b.nudger_id, p.first_name, p.last_name, p.bio, p.image, TIMESTAMPDIFF(YEAR, p.born, CURDATE()) AS age, p.email
+// 	FROM user_location AS b
+// 	JOIN user_profile AS p ON b.nudger_id = p.nudger_id
+// 	WHERE b.nudger_id = ?
+func getNudgerInfo(id string) (result NudgerInfo) {
 	stmt := `
-	SELECT b.nudger_id, p.first_name, p.last_name, p.bio, p.image, TIMESTAMPDIFF(YEAR, p.born, CURDATE()) AS age, p.email
-	FROM user_location AS b
-	JOIN user_profile AS p ON b.nudger_id = p.nudger_id
-	WHERE b.nudger_id = ?`
+	SELECT nudger_id, first_name, last_name, bio, image, TIMESTAMPDIFF(YEAR, born, CURDATE()) AS age, email FROM user_profile
+	WHERE nudger_id = ?`
 
 	rows, err := mdb.db.Query(stmt, id)
 	if err != nil {
@@ -113,5 +117,13 @@ func getNudgerInfo(id int) (result NudgerInfo) {
 		result = user
 	}
 	return result
+}
 
+func createNudger(user NudgerInfo) (err error) {
+
+	_, err = mdb.stmtInsertUser.Exec(user.NudgerID, user.FirstName, user.LastName, user.Age, user.Bio, user.Image, user.Email)
+	if err != nil {
+		return err
+	}
+	return nil
 }
