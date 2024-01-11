@@ -38,11 +38,11 @@ struct ProfileView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement: .topBarTrailing) {
-                Button{
-                    vm.signOut()
-                    
-                }label: {
-                    Text("Sign out")
+                NavigationLink {
+                    EditProfileView(firstNameField: vm.userData.firstName, lastNameField: vm.userData.lastName, bio: vm.userData.bio)
+                        .environmentObject(vm)
+                } label: {
+                    Text("Edit Profile")
                         .foregroundStyle(Color("bw"))
                         .bold()
                         .font(.caption)
@@ -53,6 +53,7 @@ struct ProfileView: View {
                 }
             }
         }
+        .environmentObject(vm)
     }
 }
 

@@ -148,6 +148,55 @@ class NudgersAPIService{
         task.resume()
     }
     
+    func updateUser(nudgerID: String, firstName: String, lastName: String, bio: String, image: String, born: String, email: String, completion: @escaping (Result<String, NetworkError>) -> ()) {
+        guard let url = URL(string: "http://localhost:8080/userInfo") else {
+            completion(.failure(.badURL))
+            return
+        }
+        print("lol")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: NudgerInfo = NudgerInfo(NudgerID: nudgerID, FirstName: firstName, LastName: lastName, Bio: bio, Image: image, Age: born, Email: email)
+        
+        do{
+            request.httpBody = try JSONEncoder().encode(body)
+        }
+        catch let error {
+            completion(.failure(.badURL))
+            print("ERROR WITH HTTPBODY \(error)")
+            return
+        }
+        
+        // make the request
+        let task = URLSession.shared.dataTask(with: request) { data , _, error in
+            guard let data, error == nil else{
+                DispatchQueue.main.async {
+                    completion(.failure(.requestFailed))
+                    print("Error: \(error.debugDescription)")
+                }
+                return
+            }
+            do{
+                let response = try JSONDecoder().decode(Response.self, from: data)
+                DispatchQueue.main.async {
+                    //self.currentUser = response
+                    completion(.success(response.message))
+                    print("Success: \(response)")
+                }
+            }
+            catch let error {
+                DispatchQueue.main.async {
+                    completion(.failure(.requestFailed))
+                    print("Error: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
     private func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data{
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300

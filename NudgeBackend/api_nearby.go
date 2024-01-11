@@ -63,6 +63,30 @@ func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
 
 		}
 
+	case http.MethodPut:
+		var user *NudgerInfo
+		err := decodeJSON(r, &user)
+
+		if err != nil {
+			fmt.Printf("could not decode user info json: %s\n", err)
+			serveJSONError(w, "could not decode user info", err, "JSON",
+				http.StatusBadRequest, http.StatusBadRequest)
+		} else {
+			err := updateNudger(*user)
+
+			if err != nil {
+				fmt.Printf("Error in updating user: %s\n", err)
+				serveJSONError(w, "Error in updating user", err, "JSON",
+					http.StatusBadRequest, http.StatusBadRequest)
+			} else {
+				success := testJson{
+					Message: "Successfull",
+				}
+				serveJSON(w, success, http.StatusOK)
+			}
+
+		}
+
 	}
 }
 

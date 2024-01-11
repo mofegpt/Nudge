@@ -10,7 +10,6 @@
 		556C23E12B43464A0003CD24 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 556C23E02B43464A0003CD24 /* GoogleSignIn */; };
 		556C23E32B43464A0003CD24 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 556C23E22B43464A0003CD24 /* GoogleSignInSwift */; };
 		556C23E62B43D88D0003CD24 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */; };
-		556C23E82B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */; };
 		557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */; };
 		557429382A48FC330030BAC7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557429372A48FC330030BAC7 /* LocationService.swift */; };
 		5589F5A72A45556E00E7BFC6 /* NudgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */; };
@@ -40,12 +39,12 @@
 		55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E642B39F06100C6DFF0 /* PfTopComp.swift */; };
 		55BE5E672B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE5E662B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift */; };
 		55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA87FF2B2D6F36008E362B /* MapKitView.swift */; };
+		55DAB1742B4DB045009FDA96 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DAB1732B4DB045009FDA96 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		556C23E42B43D7880003CD24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
-		556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist"; path = "../../../../Documents/client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIKitViewModel.swift; sourceTree = "<group>"; };
 		557429372A48FC330030BAC7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5589F5A32A45556E00E7BFC6 /* Nudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +75,7 @@
 		55BE5E642B39F06100C6DFF0 /* PfTopComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PfTopComp.swift; sourceTree = "<group>"; };
 		55BE5E662B3A4F2D00C6DFF0 /* ListOfRequestedComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRequestedComp.swift; sourceTree = "<group>"; };
 		55DA87FF2B2D6F36008E362B /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
+		55DAB1732B4DB045009FDA96 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
 				5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */,
 				55AF7F0C2B32B09400378295 /* ProfileView.swift */,
+				55DAB1732B4DB045009FDA96 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,7 +155,6 @@
 		5589F5A52A45556E00E7BFC6 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
-				556C23E72B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist */,
 				556C23E42B43D7880003CD24 /* Info.plist */,
 				5594CAAB2B2F962A000DA32C /* Components */,
 				5574292D2A48F9740030BAC7 /* Model */,
@@ -261,7 +261,6 @@
 			files = (
 				5589F5AE2A45557000E7BFC6 /* Preview Assets.xcassets in Resources */,
 				5589F5AB2A45557000E7BFC6 /* Assets.xcassets in Resources */,
-				556C23E82B43E4D20003CD24 /* client_588549125713-mpksn838hh6ls0n6442uos7vt7hk87k2.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +285,7 @@
 				55B6FFEC2B3E00F6006A14D6 /* CreateAccountView.swift in Sources */,
 				55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */,
 				55AF7F0B2B32A23D00378295 /* ButtonRepComp.swift in Sources */,
+				55DAB1742B4DB045009FDA96 /* EditProfileView.swift in Sources */,
 				55B6FFE62B3DF1B7006A14D6 /* LogInView.swift in Sources */,
 				5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */,
 				55DA88002B2D6F36008E362B /* MapKitView.swift in Sources */,

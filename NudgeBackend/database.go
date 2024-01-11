@@ -13,6 +13,7 @@ import (
 type MySQlDatabase struct {
 	db               *sql.DB
 	stmtInsertUser   *sql.Stmt
+	stmtUpdateUser   *sql.Stmt
 	stmtUpdateConfig *sql.Stmt
 }
 
@@ -31,6 +32,16 @@ func (me *MySQlDatabase) init(filepath string) {
 	me.stmtInsertUser, err = db.Prepare(`
 	INSERT INTO user_profile (nudger_id, first_name, last_name, born, bio, image, email)
 	VALUES (?, ?, ?, ?, ?, ?, ?);
+	`)
+
+	if err != nil {
+		panic(err)
+	}
+
+	me.stmtUpdateUser, err = db.Prepare(`
+	UPDATE user_profile
+	SET first_name = ?, last_name = ?, born = ?, bio = ?, image = ?, email = ?
+	WHERE (nudger_id = ?);
 	`)
 
 	if err != nil {

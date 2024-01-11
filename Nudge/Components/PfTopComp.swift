@@ -29,17 +29,17 @@ struct PfTopComp: View {
                     
             }
             .overlay(alignment: .bottom) {
-                NavigationLink {
-                    
-                } label: {
-                    Text("Edit Profile")
-                        .bold()
-                        .foregroundStyle(Color("bw"))
-                        .padding(.vertical,10)
-                        .padding(.horizontal,50)
-                        .background(.purple)
-                        .clipShape(RoundedRectangle(cornerRadius: 30))
-                }
+//                NavigationLink {
+//                    
+//                } label: {
+//                    Text("Edit Profile")
+//                        .bold()
+//                        .foregroundStyle(Color("bw"))
+//                        .padding(.vertical,10)
+//                        .padding(.horizontal,50)
+//                        .background(.purple)
+//                        .clipShape(RoundedRectangle(cornerRadius: 30))
+//                }
         }
             
             HStack(){
