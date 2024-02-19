@@ -80,7 +80,7 @@ struct NudgerInfo: Codable{
         case FirstName = "first_name"
         case LastName = "last_name"
         case Bio = "bio"
-        case Image = "image"
+        case Image = "image_base64"
         case Age = "age"
         case Email = "email"
 //        case Interests = "interests"

@@ -31,7 +31,17 @@ struct EditProfileView: View {
             Text("Sign out")
                 .foregroundStyle(.red)
                 .onTapGesture {
-                    vm.signOut()
+                    Task{
+                        vm.signOut()
+                    }
+                }
+            
+            Text("Get Nuger Info")
+                .foregroundStyle(.blue)
+                .onTapGesture {
+                    Task{
+                      //  vm.signOut()
+                    }
                 }
         }
         .listStyle(.grouped)
