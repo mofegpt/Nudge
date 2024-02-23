@@ -48,6 +48,11 @@
 		AA0DD9A82B82B9B600510CD2 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DD9A72B82B9B500510CD2 /* CreateAccountViewModel.swift */; };
 		AA17236A2B82CB550052B353 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1723692B82CB550052B353 /* ImageView.swift */; };
 		AA470F7A2B7EABC700F6BD40 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA470F792B7EABC600F6BD40 /* FirebaseAuthService.swift */; };
+		AAA5C4812B849FB000F39F32 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA5C4802B849FB000F39F32 /* DownloadManager.swift */; };
+		AAA5C4842B84BBFC00F39F32 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AAA5C4832B84BBFC00F39F32 /* Kingfisher */; };
+		AAC24C5F2B87D8BE00FB9DDA /* NearbyNudgerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC24C5E2B87D8BE00FB9DDA /* NearbyNudgerCard.swift */; };
+		AAC3936D2B86910300910F46 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3936C2B86910200910F46 /* BackgroundView.swift */; };
+		AAC3936F2B8693A800910F46 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3936E2B8693A800910F46 /* UserInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +95,10 @@
 		AA0DD9A72B82B9B500510CD2 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		AA1723692B82CB550052B353 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		AA470F792B7EABC600F6BD40 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		AAA5C4802B849FB000F39F32 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		AAC24C5E2B87D8BE00FB9DDA /* NearbyNudgerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyNudgerCard.swift; sourceTree = "<group>"; };
+		AAC3936C2B86910200910F46 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		AAC3936E2B8693A800910F46 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA5C4842B84BBFC00F39F32 /* Kingfisher in Frameworks */,
 				556C23E12B43464A0003CD24 /* GoogleSignIn in Frameworks */,
 				556C23E32B43464A0003CD24 /* GoogleSignInSwift in Frameworks */,
 				AA0DD96C2B820B9200510CD2 /* FirebaseAuth in Frameworks */,
@@ -119,6 +129,8 @@
 				55DAB1732B4DB045009FDA96 /* EditProfileView.swift */,
 				AA0DD9A12B821F1800510CD2 /* BirthdayView.swift */,
 				AA1723692B82CB550052B353 /* ImageView.swift */,
+				AAC3936C2B86910200910F46 /* BackgroundView.swift */,
+				AAC3936E2B8693A800910F46 /* UserInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +164,7 @@
 				55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */,
 				556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */,
 				AA470F792B7EABC600F6BD40 /* FirebaseAuthService.swift */,
+				AAA5C4802B849FB000F39F32 /* DownloadManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -211,6 +224,7 @@
 				55B6FFED2B3E0147006A14D6 /* InputFormComp.swift */,
 				55B6FFF12B3E0836006A14D6 /* VerificationComp.swift */,
 				55B6FFF32B3E09A1006A14D6 /* PopUpVerificationComp.swift */,
+				AAC24C5E2B87D8BE00FB9DDA /* NearbyNudgerCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,6 +249,7 @@
 				556C23E02B43464A0003CD24 /* GoogleSignIn */,
 				556C23E22B43464A0003CD24 /* GoogleSignInSwift */,
 				AA0DD96B2B820B9200510CD2 /* FirebaseAuth */,
+				AAA5C4832B84BBFC00F39F32 /* Kingfisher */,
 			);
 			productName = Nudge;
 			productReference = 5589F5A32A45556E00E7BFC6 /* Nudge.app */;
@@ -267,6 +282,7 @@
 			packageReferences = (
 				556C23DF2B43464A0003CD24 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				AA0DD95E2B820B9200510CD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AAA5C4822B84BBFB00F39F32 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5589F5A42A45556E00E7BFC6 /* Products */;
 			projectDirPath = "";
@@ -300,8 +316,10 @@
 				5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */,
 				55B6FFEA2B3DFD26006A14D6 /* LoginViewModel.swift in Sources */,
 				55942BDD2B352B5300F45CBD /* NudgersAPIService.swift in Sources */,
+				AAC3936D2B86910300910F46 /* BackgroundView.swift in Sources */,
 				AA17236A2B82CB550052B353 /* ImageView.swift in Sources */,
 				55AF7F092B32004200378295 /* InterestCompView.swift in Sources */,
+				AAA5C4812B849FB000F39F32 /* DownloadManager.swift in Sources */,
 				55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */,
 				5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */,
 				AA0DD9A42B8288F500510CD2 /* RootView.swift in Sources */,
@@ -310,6 +328,7 @@
 				AA470F7A2B7EABC700F6BD40 /* FirebaseAuthService.swift in Sources */,
 				5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */,
 				55B6FFEC2B3E00F6006A14D6 /* CreateAccountView.swift in Sources */,
+				AAC3936F2B8693A800910F46 /* UserInfoView.swift in Sources */,
 				55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */,
 				55AF7F0B2B32A23D00378295 /* ButtonRepComp.swift in Sources */,
 				55DAB1742B4DB045009FDA96 /* EditProfileView.swift in Sources */,
@@ -325,6 +344,7 @@
 				AA0DD9A82B82B9B600510CD2 /* CreateAccountViewModel.swift in Sources */,
 				55B6FFEE2B3E0147006A14D6 /* InputFormComp.swift in Sources */,
 				55B6FFE82B3DF8B7006A14D6 /* LargeButtonComp.swift in Sources */,
+				AAC24C5F2B87D8BE00FB9DDA /* NearbyNudgerCard.swift in Sources */,
 				557429382A48FC330030BAC7 /* LocationService.swift in Sources */,
 				55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */,
 				55B6FFF22B3E0836006A14D6 /* VerificationComp.swift in Sources */,
@@ -556,6 +576,14 @@
 				minimumVersion = 10.21.0;
 			};
 		};
+		AAA5C4822B84BBFB00F39F32 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -573,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA0DD95E2B820B9200510CD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		AAA5C4832B84BBFC00F39F32 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAA5C4822B84BBFB00F39F32 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

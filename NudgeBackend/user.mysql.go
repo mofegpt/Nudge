@@ -35,13 +35,13 @@ type DetailedUser struct {
 
 type NudgerInfo struct {
 	// NudgerID    uuid.UUID
-	NudgerID    string
-	FirstName   string
-	LastName    string
-	Age         string
-	PicturePath string
-	Bio       	string
-	Email     	string
+	NudgerID    string `json:"nudger_id"`
+	FirstName   string `json:"first_name"`
+	LastName    string `json:"last_name"`
+	Age         string `json:"age"`
+	PicturePath string `json:"image_path"`
+	Bio       	string `json:"bio"`
+	Email     	string `json:"email"`
 }
 
 

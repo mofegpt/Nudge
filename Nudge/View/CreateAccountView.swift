@@ -27,7 +27,7 @@ struct CreateAccountView: View {
                             .padding(.bottom)
                         InputFormComp(inputValue: $vm.lastName, placeholder: "Last Name", formTitle: "Last Name")
                             .padding(.bottom)
-                        InputFormComp(inputValue: $vm.bio, placeholder: "Biiio", formTitle: "Bio")
+                        InputFormComp(inputValue: $vm.bio, placeholder: "Biio", formTitle: "Bio")
                             .padding(.bottom)
 //                        InputFormComp(inputValue: $text, placeholder: "Confirm Password", formTitle: "Password")
 //                            .padding(.bottom)

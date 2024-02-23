@@ -70,9 +70,10 @@ struct NudgerInfo: Codable{
     let FirstName: String
     let LastName: String
     let Bio: String
-    let Image: String
+    let Image: String?
     let Age: String
     let Email: String
+//    let ImageBase64: String
 //    let Interests: [NudgerInterest]?
     
     enum CodingKeys: String, CodingKey {
@@ -80,9 +81,10 @@ struct NudgerInfo: Codable{
         case FirstName = "first_name"
         case LastName = "last_name"
         case Bio = "bio"
-        case Image = "image_base64"
+        case Image = "image_path"
         case Age = "age"
         case Email = "email"
+ //       case ImageBase64 = "image_base64"
 //        case Interests = "interests"
     }
     
@@ -96,4 +98,25 @@ struct NudgerInterest: Codable, Identifiable{
         case NudgerID = "nudger_id"
         case interest = "interest"
     }
+}
+
+struct NudgerJSON: Codable{
+    let NudgerID: String
+    let FirstName: String
+    let LastName: String
+    let Bio: String
+    let Age: String
+    let Email: String
+    let ImageBase64: String
+    
+    enum CodingKeys: String, CodingKey {
+        case NudgerID = "nudger_id"
+        case FirstName = "first_name"
+        case LastName = "last_name"
+        case Bio = "bio"
+        case Age = "age"
+        case Email = "email"
+        case ImageBase64 = "image_base64"
+    }
+    
 }

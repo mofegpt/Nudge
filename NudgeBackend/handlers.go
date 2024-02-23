@@ -4,9 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-
 	"encoding/base64"
-//	"github.com/google/uuid"
+	"github.com/google/uuid"
 )
 
 type Parameters struct {
@@ -17,8 +16,6 @@ type Parameters struct {
 	PicturePath string
 	Age         string `json:"age"`
 	Email       string `json:"email"`
-	// ImageBase64 []byte `json:"image_base64"`
-
 	ImageBase64 string `json:"image_base64"`
 }
 
@@ -51,9 +48,22 @@ func handleDetailedNearbyUsers(w http.ResponseWriter, r *http.Request) {
 func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		id := r.FormValue("id")
+		// id := r.FormValue("id")
+		// var params *Parameters
+		// err := decodeJSON(r, &params)
+		// if err != nil {
+		// 	//	respondWithError(w, 400, fmt.Sprintf("Error parsing JSON: %s", err))
+		// 	serveJSONError(w, "Error parsing JSON: ", err, "JSON", http.StatusBadRequest, http.StatusBadRequest)
+		// }
+
+		// id := params.ID
+		id:= r.URL.Query().Get("nudger_id")
+
 		result := getNudgerInfo(id)
+		key := result.PicturePath
+		result.PicturePath, _ = downloadFromS3(key)
 		serveJSON(w, result, http.StatusOK)
+		fmt.Println(result)
 
 	case http.MethodPost:
 		var params *Parameters
@@ -69,13 +79,18 @@ func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		url, err := uploadToS3("SWIFT", imageBytes)
+		// url, err := uploadToS3("SWIFT", imageBytes)
+		// if err != nil {
+		// 	http.Error(w, "Error getting url", http.StatusBadRequest)
+		// }
+		objectKey := uuid.New()
+		_, err = uploadToS3(objectKey.String(), imageBytes)
 		if err != nil {
 			http.Error(w, "Error getting url", http.StatusBadRequest)
 		}
 
-		params.PicturePath = url
-		fmt.Println("url:", url)
+		params.PicturePath = objectKey.String()
+	//	fmt.Println("url:", url)
 		user, err := CreateUser(r.Context(), NudgerInfo{
 			// NudgerID:    uuid.New(),
 			NudgerID:    params.ID,
@@ -90,9 +105,14 @@ func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
 			serveJSONError(w, "Error parsing creating user: ", err, "JSON", http.StatusBadRequest, http.StatusBadRequest)
 			_ = fmt.Errorf("Error creating user: %v", err)
 			return
+		} else{
+			success := testJson{Message: "Successful from server"}
+			serveJSON(w, success, http.StatusAccepted)
+
 		}
-		//respondWithJSON(w, 200, user)
+	//	respondWithJSON(w, 200, user)
 		serveJSON(w, user, http.StatusAccepted)
+
 
 	case http.MethodPut:
 		var user *NudgerInfo

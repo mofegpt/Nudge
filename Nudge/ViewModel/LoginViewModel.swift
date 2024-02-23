@@ -11,8 +11,6 @@ import Combine
 
 @MainActor
 class LoginViewModel: ObservableObject{
- //   var cancellable = Set<AnyCancellable>()
-//    let manager = GoogleAuthService.instance
     let manager = AuthenticationManager.shared
     let apiManager = NudgersAPIService.instance
     let currentUserManager = CurrentUserService.instance
@@ -29,13 +27,13 @@ class LoginViewModel: ObservableObject{
 
     
     @Published var hasSignedIn: Bool = false
+    
     init(){
-     //   subscribeToNudgerInfo()
     }
     func signIn(){
         Task{
             do{
-              let result  = try await manager.signIn(email: email, password: password)
+                let result: ()  = try await manager.signIn(email: email, password: password)
                 print("Success")
                 print(result)
 
@@ -57,19 +55,19 @@ class LoginViewModel: ObservableObject{
 //        manager.check()
 //    }
     
-    func createAccount(){
-        apiManager.createUser(nudgerID: userID, firstName: firstName, lastName: lastName, bio: "", image: "", born: "2003-05-30 23:59:59", email: email) {result in
-            switch result {
-            case .success(let success):
-                print("Success: \(success)")
-                self.currentUserManager.updateAccountStatus(nudgerID: self.userID, firstName: self.firstName, lastName: self.lastName, bio: self.bio, image: "", born: "20", email: "")
-                self.currentUserManager.hasCreatedAccount = true
-                self.currentUserManager.currentUserSignedIn = true
-            case .failure(let failure):
-                print("Failed: \(failure)")
-            }
-        }
-    }
+//    func createAccount(){
+//        apiManager.createUser(nudgerID: userID, firstName: firstName, lastName: lastName, bio: "", image: "", born: "2003-05-30 23:59:59", email: email) {result in
+//            switch result {
+//            case .success(let success):
+//                print("Success: \(success)")
+//                self.currentUserManager.updateAccountStatus(nudgerID: self.userID, firstName: self.firstName, lastName: self.lastName, bio: self.bio, image: "", born: "20", email: "")
+//                self.currentUserManager.hasCreatedAccount = true
+//                self.currentUserManager.currentUserSignedIn = true
+//            case .failure(let failure):
+//                print("Failed: \(failure)")
+//            }
+//        }
+//    }
     
     
 //    func subscribeToNudgerInfo(){

@@ -20,20 +20,8 @@ struct ImageView: View {
             //       }
             Spacer()
             
-            VStack {
-                //                Button(action: {
-                //
-                //
-                //
-                //                }, label: {
-                //                    Text("+")
-                //                        .font(.largeTitle)
-                //                        .frame(width: 150, height: 150)
-                //                        .foregroundColor(.black)
-                //                        .background(Color.gray)
-                //                        .cornerRadius(10)
-                //                        .opacity(0.5)
-                //                        .padding(.horizontal)                })
+     //       VStack {
+
                 
                 PhotosPicker(selection: $vm.selectedImage) {
                     if let image = vm.profileImage {
@@ -55,9 +43,9 @@ struct ImageView: View {
                     
                 }
                 
-                
-            }
-            .frame(maxWidth: .infinity)
+        //    }
+       //     .frame(maxWidth: .infinity)
+            
             Spacer()
             
             Button(action: {

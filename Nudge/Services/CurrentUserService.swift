@@ -7,10 +7,43 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
-class CurrentUserService{
+class CurrentUserService: ObservableObject{
+    @Published var currentUser: NudgerInfo?
     
     static let instance = CurrentUserService()
+    
+    init(){
+        Task{
+            try await fetchCurrentUser()
+        }
+    }
+    
+    @MainActor
+    func fetchCurrentUser() async throws {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let url = URL(string: "https://grouper-relieved-nearly.ngrok-free.app/userInfo?nudger_id=\(uid)") else { throw URLError(.badURL) }
+        let request = URLRequest(url: url)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do{
+            let decoder = JSONDecoder()
+            let returnedUsers = try decoder.decode(NudgerInfo.self, from: data)
+            self.currentUser = returnedUsers
+
+        } catch{
+            print("Could not decode JSON")
+            throw URLError(.badServerResponse)
+            
+        }
+        
+    }
+    
+    func reset(){
+        self.currentUser = nil
+    }
+    
     
     @AppStorage("signed_in") var currentUserSignedIn: Bool?
     @AppStorage("user_saved_data") private var appStorageData: Data = Data()

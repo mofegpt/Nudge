@@ -8,6 +8,7 @@
 import Foundation
 import PhotosUI
 import SwiftUI
+import Combine
 
 @MainActor
 class CreateAccountViewModel: ObservableObject{
@@ -16,6 +17,7 @@ class CreateAccountViewModel: ObservableObject{
     @Published var selectedImage: PhotosPickerItem? {
         didSet{
             Task{
+                
                 await loadImage()
             }
         }
@@ -29,14 +31,25 @@ class CreateAccountViewModel: ObservableObject{
     @Published var password: String = ""
     @Published var image: String = ""
     @Published var profileImage: Image?
+    @Published var currentUser: NudgerInfo?
+    
+    
+    
+    init() {
+        
+    }
     
     func register() async throws{
-        let result = try await  manager.createUser(email: email, password: password)
-        print("user id: \(result.uid)")
+        try await  manager.createUser(email: email, password: password)
+        //      print("user id: \(String(describing: manager.userSession?uid))")
+        guard let id = manager.userSession?.uid else {return}
         
-        apiManager.createUser(nudgerID: result.uid, firstName: firstName, lastName: lastName, bio: bio, image: image, born: "2003-05-30 23:59:59", email: email) {result in
-            
+        do{
+            try await apiManager.createUser(nudgerID: id, firstName: firstName, lastName: lastName, bio: bio, image: image, born: "2003-05-30 23:59:59", email: email)
+        }catch{
+            print("DEBUG: Could not create user")
         }
+        
     }
     
     
@@ -58,11 +71,11 @@ class CreateAccountViewModel: ObservableObject{
         guard let imageData = uiImage.jpegData(compressionQuality: 0.25) else { return}
         
         let base64Image = imageData.base64EncodedString()
-        // let json: [String: Any] = ["image": base64Image]
+        print("DEBUG: image converted")
         image = base64Image
-        
-        
+ 
     }
+    
 }
 
 
