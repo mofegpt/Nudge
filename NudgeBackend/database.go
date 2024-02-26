@@ -38,9 +38,14 @@ func (me *MySQlDatabase) init(filepath string) {
 		panic(err)
 	}
 
+	// me.stmtUpdateUser, err = db.Prepare(`
+	// UPDATE user_profile
+	// SET first_name = ?, last_name = ?, bio = ?, image = ?, email = ?
+	// WHERE (nudger_id = ?);
+	// `)
 	me.stmtUpdateUser, err = db.Prepare(`
 	UPDATE user_profile
-	SET first_name = ?, last_name = ?, born = ?, bio = ?, image = ?, email = ?
+	SET bio = ?
 	WHERE (nudger_id = ?);
 	`)
 

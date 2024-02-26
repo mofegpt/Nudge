@@ -144,7 +144,7 @@ func createNudger(user NudgerInfo) (err error) {
 
 func updateNudger(user NudgerInfo) (err error) {
 
-	_, err = mdb.stmtUpdateUser.Exec(user.FirstName, user.LastName, user.Age, user.Bio, user.PicturePath, user.Email, user.NudgerID)
+	_, err = mdb.stmtUpdateUser.Exec(user.Bio, user.NudgerID)
 	if err != nil {
 		return err
 	}

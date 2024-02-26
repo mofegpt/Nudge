@@ -66,13 +66,14 @@ struct NearbyDetailedList: Codable{
 
 struct NudgerInfo: Codable{
    // let id = UUID().uuidString
-    let NudgerID: String
-    let FirstName: String
-    let LastName: String
-    let Bio: String
-    let Image: String?
-    let Age: String
-    let Email: String
+    var NudgerID: String
+    var FirstName: String
+    var LastName: String
+    var Bio: String
+    var Image: String
+    var Age: String
+    var Email: String
+
 //    let ImageBase64: String
 //    let Interests: [NudgerInterest]?
     
@@ -120,3 +121,25 @@ struct NudgerJSON: Codable{
     }
     
 }
+
+struct UpdateNudgerJSON: Codable{
+    let NudgerID: String
+//    let FirstName: String
+//    let LastName: String
+    var Bio: String
+//    let Age: String
+//    let Email: String
+//    let ImageBase64: String
+    
+    enum CodingKeys: String, CodingKey {
+        case NudgerID = "nudger_id"
+//        case FirstName = "first_name"
+//        case LastName = "last_name"
+        case Bio = "bio"
+//        case Age = "age"
+//        case Email = "email"
+//        case ImageBase64 = "image_base64"
+    }
+    
+}
+

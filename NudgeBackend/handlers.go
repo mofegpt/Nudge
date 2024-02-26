@@ -9,7 +9,7 @@ import (
 )
 
 type Parameters struct {
-	ID        string `json:"nudger_id"`
+	ID        	string `json:"nudger_id"`
 	FirstName   string `json:"first_name"`
 	LastName    string `json:"last_name"`
 	Bio         string `json:"bio"`
@@ -48,15 +48,7 @@ func handleDetailedNearbyUsers(w http.ResponseWriter, r *http.Request) {
 func handleNudgerInfo(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		// id := r.FormValue("id")
-		// var params *Parameters
-		// err := decodeJSON(r, &params)
-		// if err != nil {
-		// 	//	respondWithError(w, 400, fmt.Sprintf("Error parsing JSON: %s", err))
-		// 	serveJSONError(w, "Error parsing JSON: ", err, "JSON", http.StatusBadRequest, http.StatusBadRequest)
-		// }
 
-		// id := params.ID
 		id:= r.URL.Query().Get("nudger_id")
 
 		result := getNudgerInfo(id)

@@ -17,15 +17,12 @@
 		5589F5AB2A45557000E7BFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AA2A45557000E7BFC6 /* Assets.xcassets */; };
 		5589F5AE2A45557000E7BFC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */; };
 		55942BDD2B352B5300F45CBD /* NudgersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */; };
-		5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAA92B2F9539000DA32C /* NudgersListView.swift */; };
 		5594CAAD2B2F963E000DA32C /* NudgeBioCompListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */; };
 		5594CAAF2B2FD18C000DA32C /* NudgersStruct .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */; };
 		5594CAB12B2FD3D3000DA32C /* CustomAnnotationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */; };
-		5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */; };
 		55AF7F072B31EAC000378295 /* NudgerInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */; };
 		55AF7F092B32004200378295 /* InterestCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F082B32004200378295 /* InterestCompView.swift */; };
 		55AF7F0B2B32A23D00378295 /* ButtonRepComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0A2B32A23D00378295 /* ButtonRepComp.swift */; };
-		55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF7F0C2B32B09400378295 /* ProfileView.swift */; };
 		55B6FFE62B3DF1B7006A14D6 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */; };
 		55B6FFE82B3DF8B7006A14D6 /* LargeButtonComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE72B3DF8B7006A14D6 /* LargeButtonComp.swift */; };
 		55B6FFEA2B3DFD26006A14D6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */; };
@@ -65,15 +62,12 @@
 		5589F5AA2A45557000E7BFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5589F5AD2A45557000E7BFC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgersAPIService.swift; sourceTree = "<group>"; };
-		5594CAA92B2F9539000DA32C /* NudgersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgersListView.swift; sourceTree = "<group>"; };
 		5594CAAC2B2F963E000DA32C /* NudgeBioCompListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeBioCompListView.swift; sourceTree = "<group>"; };
 		5594CAAE2B2FD18C000DA32C /* NudgersStruct .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NudgersStruct .swift"; sourceTree = "<group>"; };
 		5594CAB02B2FD3D3000DA32C /* CustomAnnotationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationComp.swift; sourceTree = "<group>"; };
-		5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgerInfoView.swift; sourceTree = "<group>"; };
 		55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgerInfoViewModel.swift; sourceTree = "<group>"; };
 		55AF7F082B32004200378295 /* InterestCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCompView.swift; sourceTree = "<group>"; };
 		55AF7F0A2B32A23D00378295 /* ButtonRepComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRepComp.swift; sourceTree = "<group>"; };
-		55AF7F0C2B32B09400378295 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		55B6FFE72B3DF8B7006A14D6 /* LargeButtonComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButtonComp.swift; sourceTree = "<group>"; };
 		55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -119,18 +113,8 @@
 		5574292B2A48F9040030BAC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */,
-				55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */,
-				5594CAA92B2F9539000DA32C /* NudgersListView.swift */,
 				55B6FFEF2B3E06F3006A14D6 /* VerifyEmailView.swift */,
-				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
-				5594CAB22B2FDCBF000DA32C /* NudgerInfoView.swift */,
-				55AF7F0C2B32B09400378295 /* ProfileView.swift */,
-				55DAB1732B4DB045009FDA96 /* EditProfileView.swift */,
-				AA0DD9A12B821F1800510CD2 /* BirthdayView.swift */,
-				AA1723692B82CB550052B353 /* ImageView.swift */,
-				AAC3936C2B86910200910F46 /* BackgroundView.swift */,
-				AAC3936E2B8693A800910F46 /* UserInfoView.swift */,
+				5589F5A82A45556E00E7BFC6 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,12 +122,7 @@
 		5574292C2A48F90F0030BAC7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */,
 				55AF7F062B31EAC000378295 /* NudgerInfoViewModel.swift */,
-				55BE5E602B39E44200C6DFF0 /* ProfileViewModel.swift */,
-				55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */,
-				AA0DD9A52B82891E00510CD2 /* RootViewModel.swift */,
-				AA0DD9A72B82B9B500510CD2 /* CreateAccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,12 +138,9 @@
 		5574292E2A48F9890030BAC7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				557429372A48FC330030BAC7 /* LocationService.swift */,
 				55942BDC2B352B5300F45CBD /* NudgersAPIService.swift */,
 				55BE5E622B39E82C00C6DFF0 /* CurrentUserService.swift */,
 				556C23E52B43D88D0003CD24 /* GoogleAuthService.swift */,
-				AA470F792B7EABC600F6BD40 /* FirebaseAuthService.swift */,
-				AAA5C4802B849FB000F39F32 /* DownloadManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,14 +164,15 @@
 		5589F5A52A45556E00E7BFC6 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				AAB6F07B2B8878B800C53837 /* App */,
+				AAB6F0882B887F8E00C53837 /* Root */,
+				AAB6F07C2B8878D000C53837 /* Core */,
 				5594CAAB2B2F962A000DA32C /* Components */,
 				5574292D2A48F9740030BAC7 /* Model */,
 				5574292E2A48F9890030BAC7 /* Services */,
+				AAB6F08C2B88818400C53837 /* Utils */,
 				5574292C2A48F90F0030BAC7 /* ViewModel */,
 				5574292B2A48F9040030BAC7 /* View */,
-				5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */,
-				AA0DD9A32B8288F500510CD2 /* RootView.swift */,
-				5589F5A82A45556E00E7BFC6 /* ContentView.swift */,
 				5589F5AA2A45557000E7BFC6 /* Assets.xcassets */,
 				AA0DD99D2B82143E00510CD2 /* GoogleService-Info.plist */,
 				5589F5AC2A45557000E7BFC6 /* Preview Content */,
@@ -227,6 +204,156 @@
 				AAC24C5E2B87D8BE00FB9DDA /* NearbyNudgerCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AAB6F07B2B8878B800C53837 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5589F5A62A45556E00E7BFC6 /* NudgeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AAB6F07C2B8878D000C53837 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6F07D2B8878F700C53837 /* Authentication */,
+				AAB6F0812B8879FF00C53837 /* Map */,
+				AAB6F0852B887B0800C53837 /* ProfileView */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AAB6F07D2B8878F700C53837 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6F0802B88793900C53837 /* ViewModel */,
+				AAB6F07F2B88791900C53837 /* View */,
+				AAB6F07E2B88790A00C53837 /* Service */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		AAB6F07E2B88790A00C53837 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AA470F792B7EABC600F6BD40 /* FirebaseAuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AAB6F07F2B88791900C53837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55B6FFE52B3DF1B7006A14D6 /* LogInView.swift */,
+				55B6FFEB2B3E00F6006A14D6 /* CreateAccountView.swift */,
+				AA0DD9A12B821F1800510CD2 /* BirthdayView.swift */,
+				AA1723692B82CB550052B353 /* ImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB6F0802B88793900C53837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55B6FFE92B3DFD26006A14D6 /* LoginViewModel.swift */,
+				AA0DD9A72B82B9B500510CD2 /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB6F0812B8879FF00C53837 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6F08B2B88812300C53837 /* Service */,
+				AAB6F0842B887A6200C53837 /* ViewModel */,
+				AAB6F0822B887A0700C53837 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		AAB6F0822B887A0700C53837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DA87FF2B2D6F36008E362B /* MapKitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB6F0842B887A6200C53837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5574292F2A48FA130030BAC7 /* MapUIKitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB6F0852B887B0800C53837 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6F0872B887B7F00C53837 /* ViewModel */,
+				AAB6F0862B887B2100C53837 /* View */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		AAB6F0862B887B2100C53837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DAB1732B4DB045009FDA96 /* EditProfileView.swift */,
+				AAC3936C2B86910200910F46 /* BackgroundView.swift */,
+				AAC3936E2B8693A800910F46 /* UserInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB6F0872B887B7F00C53837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55BE5E602B39E44200C6DFF0 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB6F0882B887F8E00C53837 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6F08A2B887FA000C53837 /* ViewModel */,
+				AAB6F0892B887F9600C53837 /* View */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		AAB6F0892B887F9600C53837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA0DD9A32B8288F500510CD2 /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB6F08A2B887FA000C53837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA0DD9A52B82891E00510CD2 /* RootViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB6F08B2B88812300C53837 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				557429372A48FC330030BAC7 /* LocationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AAB6F08C2B88818400C53837 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAA5C4802B849FB000F39F32 /* DownloadManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,10 +448,8 @@
 				55AF7F092B32004200378295 /* InterestCompView.swift in Sources */,
 				AAA5C4812B849FB000F39F32 /* DownloadManager.swift in Sources */,
 				55BE5E652B39F06100C6DFF0 /* PfTopComp.swift in Sources */,
-				5594CAB32B2FDCBF000DA32C /* NudgerInfoView.swift in Sources */,
 				AA0DD9A42B8288F500510CD2 /* RootView.swift in Sources */,
 				55B6FFF42B3E09A1006A14D6 /* PopUpVerificationComp.swift in Sources */,
-				5594CAAA2B2F9539000DA32C /* NudgersListView.swift in Sources */,
 				AA470F7A2B7EABC700F6BD40 /* FirebaseAuthService.swift in Sources */,
 				5589F5A92A45556E00E7BFC6 /* ContentView.swift in Sources */,
 				55B6FFEC2B3E00F6006A14D6 /* CreateAccountView.swift in Sources */,
@@ -346,7 +471,6 @@
 				55B6FFE82B3DF8B7006A14D6 /* LargeButtonComp.swift in Sources */,
 				AAC24C5F2B87D8BE00FB9DDA /* NearbyNudgerCard.swift in Sources */,
 				557429382A48FC330030BAC7 /* LocationService.swift in Sources */,
-				55AF7F0D2B32B09400378295 /* ProfileView.swift in Sources */,
 				55B6FFF22B3E0836006A14D6 /* VerificationComp.swift in Sources */,
 				55BE5E612B39E44200C6DFF0 /* ProfileViewModel.swift in Sources */,
 				557429302A48FA130030BAC7 /* MapUIKitViewModel.swift in Sources */,
