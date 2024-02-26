@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PfTopComp: View {
     var firstName: String
     var lastName: String
     var age: String
+    
+ //   var user: NudgerInfo?
+    @Binding var profilePicture: String?
     var body: some View {
         VStack(){
             ZStack {
@@ -20,12 +24,25 @@ struct PfTopComp: View {
                 Circle()
                     .frame(width: 195, height: 195)
                     .foregroundColor(Color("wb"))
-                Image("simp2")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 190, height: 190)
-                    .clipShape(Circle())
-                    .foregroundStyle(.secondary)
+                if let imageUrl = profilePicture{
+                    KFImage(URL(string: imageUrl))
+                        .resizable()
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 190, height: 190)
+                        .clipShape(Circle())
+
+                }else{
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 190, height: 190)
+                        .clipShape(Circle())
+                        .foregroundStyle(.gray)
+                        
+                }
+                
                     
             }
             .overlay(alignment: .bottom) {
@@ -52,6 +69,6 @@ struct PfTopComp: View {
     }
 }
 
-#Preview {
-    PfTopComp(firstName: "Matthew", lastName: "faith", age: "26")
-}
+//#Preview {
+//    PfTopComp(firstName: "Matthew", lastName: "faith", age: "26", profilePicture: "simp")
+//}

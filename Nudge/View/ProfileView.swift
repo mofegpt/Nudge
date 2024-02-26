@@ -13,8 +13,10 @@ struct ProfileView: View {
         
         ScrollView(showsIndicators: false){
             VStack() {
-                PfTopComp(firstName: vm.userData.firstName, lastName: vm.userData.lastName, age: vm.userData.born)
+//                PfTopComp(firstName: vm.userData.firstName, lastName: vm.userData.lastName, age: vm.userData.born)
                     //.padding(.top, 50)
+//                PfTopComp(firstName: vm.user.FirstName, lastName: vm.user.LastName, age: vm.user.Age)
+                PfTopComp(firstName: vm.currentUser?.FirstName ?? "", lastName: vm.currentUser?.LastName ?? "", age: vm.currentUser?.Age ?? "", profilePicture: $vm.imageUrl)
                 Divider()
                 
                 HStack {
@@ -32,6 +34,9 @@ struct ProfileView: View {
             }
             .padding()
             .onAppear{
+//                Task{
+//                    await vm.loadImage()
+//                }
                 vm.getAppData()
             }
         }

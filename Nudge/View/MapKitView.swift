@@ -35,14 +35,42 @@ struct MapKitView: View {
                 }
                 .tint(.purple)
                 VStack {
-                    Spacer()
+                    
+//                    ScrollView(.horizontal, showsIndicators: false){
+//                        HStack{
+//                            NavigationLink {
+//                                BackgroundView()
+//                            } label: {
+//                                NearbyNudgerCard()
+//                            }
+//                            NavigationLink {
+//                                BackgroundView()
+//                            } label: {
+//                                NearbyNudgerCard()
+//                            }
+//                            NavigationLink {
+//                                BackgroundView()
+//                            } label: {
+//                                NearbyNudgerCard()
+//                            }
+//                            
+//                        }
+//                    }
+                    
+                    
+                    
+                    
+                    
+                    
+           //        Spacer()
                     HStack(alignment: .bottom) {
                         VStack {
                             NavigationLink {
-                                ProfileView()
+                                //  ProfileView()
+                                BackgroundView()
                             } label: {
-                                    ButtonRepComp(name: "person.fill")
-                                }
+                                ButtonRepComp(name: "person.fill")
+                            }
                             Button {
                                 //mapData.getUserLocation()
                                 mapData.getNearbyUsers()
@@ -66,7 +94,34 @@ struct MapKitView: View {
                         }
                     }
                     .padding()
+                    
+                    Spacer()
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            NavigationLink {
+                                BackgroundView()
+                            } label: {
+                                NearbyNudgerCard()
+                            }
+                            NavigationLink {
+                                BackgroundView()
+                            } label: {
+                                NearbyNudgerCard()
+                            }
+                            NavigationLink {
+                                BackgroundView()
+                            } label: {
+                                NearbyNudgerCard()
+                            }
+                            
+                        }
+                    }
+                    
+                    
+                    
                 }
+                
                 
             }
             .sheet(isPresented: $mapData.isNudgerSheetPresented, onDismiss: {

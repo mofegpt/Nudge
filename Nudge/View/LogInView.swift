@@ -10,9 +10,10 @@ import GoogleSignInSwift
 
 struct LogInView: View {
     @State var text: String = ""
-    @EnvironmentObject var vm: LoginViewModel
+        // @EnvironmentObject var vm: LoginViewModel
+    @StateObject var vm = LoginViewModel()
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Image("bk")
                     .resizable()
@@ -33,18 +34,43 @@ struct LogInView: View {
                         
                         Spacer()
                         
-                        Button {
+                        TextField("Email", text: $vm.email)
+                            .padding()
+                            .background(Color.white.opacity(0.8))
+                            .cornerRadius(10)
+                            .autocapitalization(.none)
+                        
+                        SecureField("Password", text: $vm.password)
+                            .padding()
+                            .background(Color.white.opacity(0.8))
+                            .cornerRadius(10)
+                            .autocapitalization(.none)
+
+                        
+                        
+
+                        Button(action: {
                             vm.signIn()
-                        } label: {
-                            Text("Login with Google")
-                                .bold()
-                                .foregroundColor(.primary)
-                                .padding()
+                        }, label: {
+                            Text("Sign In")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(height: 55)
                                 .frame(maxWidth: .infinity)
-                                .background()
-                                .cornerRadius(8)
-                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        }
+                                .background(Color.purple)
+                            .cornerRadius(10)            })
+//                        Button {
+//                        //    vm.signIn()
+//                        } label: {
+//                            Text("Login with Google")
+//                                .bold()
+//                                .foregroundColor(.primary)
+//                                .padding()
+//                                .frame(maxWidth: .infinity)
+//                                .background()
+//                                .cornerRadius(8)
+//                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+//                        }
                         
                         Spacer()
                         
@@ -61,29 +87,32 @@ struct LogInView: View {
                             .background(.opacity(0.00001))
                     }
 
-                    
-                    HStack {
-                        Text("New to Nudge? ")
-                            .foregroundStyle(.secondary)
-                        Button {
-                            vm.signOut()
-                        } label: {
+                    NavigationLink {
+                        CreateAccountView()
+                    } label: {
+                        HStack {
+                            Text("New to the Platform? ")
+                                .foregroundStyle(.secondary)
                             Text("Register")
                                 .foregroundColor(.purple)
                         }
+                        .padding()
+                        .font(.footnote)
+                        .bold()
                     }
-                    .padding()
-                    .font(.footnote)
-                    .bold()
+                    
+          
                     .navigationBarHidden(true)
+                    
                 }
             }
-        }
+    }
         .tint(.purple)
+        .environmentObject(vm)
     }
 }
 
 #Preview {
     LogInView()
-        .environmentObject(LoginViewModel())
+      //  .environmentObject(LoginViewModel())
 }

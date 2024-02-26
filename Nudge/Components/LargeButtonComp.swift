@@ -16,7 +16,7 @@ struct LargeButtonComp: View {
             .padding()
             .frame(maxWidth: .infinity)
             .background(.purple)
-            .cornerRadius(8)
+            .cornerRadius(10)
     }
 }
 

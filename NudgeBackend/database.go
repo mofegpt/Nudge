@@ -54,5 +54,5 @@ func (me *MySQlDatabase) init(filepath string) {
 		panic(err)
 	}
 
-	fmt.Println("successfully connected :')")
+	fmt.Println("Successfully connected to the Database!")
 }
